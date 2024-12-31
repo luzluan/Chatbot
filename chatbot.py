@@ -1,11 +1,31 @@
 import re
 
-nome = input("Qual é o seu nome?\n")
-if re.fullmatch(r"^[a-zA-Z]+$", nome) == None:
-    print("Tente inserir seu nome novamente.")
+print("Olá!\nSou *****, e vou te auxiliar na triagem do seu atendimento. Para iniciarmos:")
+
+def validar_nome(nome):
+    if re.fullmatch(r"^[a-zA-Z]+$", nome):
+        return True
+    else:
+        return False
+
+condicao_nome = True
+
+while condicao_nome:
+    
     nome = input("Qual é o seu nome?\n")
-idade = input("Agora, qual é a sua idade?\n")
-verificar = print("Seu nome é", nome, "e a sua idade é", idade)
+
+    if validar_nome(nome):
+        condicao_nome = False
+    else:
+        print("Vamos tentar novamente.")
+
+print("teste")
+
+# if re.fullmatch(r"^[a-zA-Z]+$", nome):
+#     print("Tente inserir seu nome novamente.")
+#     nome = input("Qual é o seu nome?\n")
+# idade = input("Agora, qual é a sua idade?\n")
+# verificar = print("Seu nome é", nome, "e a sua idade é", idade)
 
 
 # def dados():
