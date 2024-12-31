@@ -7,23 +7,14 @@ def validar_letras(nome):
     else:
         return False
 
-
-def corrige_valor_loop(condicao):
-    if condicao:
-        return False
-    else:
-        return True
-
-
 condicao = True
 
 while condicao:
+
     nome = input("Qual é o seu nome?\n")
 
-    retorno_do_regex = validar_letras(nome)
+    if validar_letras(nome):
+        condicao = False
+    else:
+        print("Digite apenas letras, sem números ou caracteres especiais.")
 
-    print("O Nome está devidamente validado? ", retorno_do_regex)
-
-    condicao = corrige_valor_loop(retorno_do_regex)
-
-    # condicao = False
