@@ -10,16 +10,32 @@ def validar_nome(nome):
 
 condicao_nome = True
 
-while condicao_nome:
-    
+while condicao_nome:  
     nome = input("Qual é o seu nome?\n")
 
     if validar_nome(nome):
         condicao_nome = False
     else:
-        print("Vamos tentar novamente.")
+        print("Digite apenas letras. Números ou caracteres especiais não são válidos.")
+
+def validar_idade(data_nascimento):
+    if re.fullmatch(r"^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$", data_nascimento):
+        return True
+    else:
+        return False
+
+condicao_data_nascimento = True
+
+while condicao_data_nascimento:
+    data_nascimento = input("Digite a sua data de nascimento, no formato DD/MM/AAAA.\n")
+
+    if validar_idade(data_nascimento):
+        condicao_data_nascimento = False
+    else:
+        print("Vamos tentar novamente. \nExemplo: 01/01/2000\n")
 
 print("teste")
+
 
 # if re.fullmatch(r"^[a-zA-Z]+$", nome):
 #     print("Tente inserir seu nome novamente.")

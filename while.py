@@ -17,4 +17,3 @@ while condicao:
         condicao = False
     else:
         print("Digite apenas letras, sem números ou caracteres especiais.")
-
