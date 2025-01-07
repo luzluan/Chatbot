@@ -3,7 +3,7 @@ import re
 print("Olá!\nSou *****, e vou te auxiliar na triagem do seu atendimento. Para iniciarmos:")
 
 def validar_nome(nome):
-    if re.fullmatch(r"^[a-zA-Z]+$", nome):
+    if re.fullmatch(r"^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$", nome):
         return True
     else:
         return False
