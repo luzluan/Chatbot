@@ -3,10 +3,14 @@ import re
 print("Olá!\nSou *****, e vou te auxiliar na triagem do seu atendimento. Para iniciarmos:")
 
 def validar_nome(nome):
-    if re.fullmatch(r"^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$", nome):
+    if re.fullmatch(r"^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,}$", nome):
         return True
     else:
         return False
+
+def confirmar(user_input):
+    resposta = ['sim', 's', 'yes', 'y', 'correto']
+    return user_input.strip().lower() in resposta
 
 condicao_nome = True
 
@@ -14,7 +18,11 @@ while condicao_nome:
     nome = input("Qual é o seu nome?\n")
 
     if validar_nome(nome):
-        condicao_nome = False
+        user_input = input(f"Seus dados estão corretos? Nome: {nome}\nsim ou não?\n").lower().strip()
+        if confirmar(user_input):
+            condicao_nome = False
+        else:
+            print("Vamos tentar novamente.")
     else:
         print("Digite apenas letras. Números ou caracteres especiais não são válidos.")
 
