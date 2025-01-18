@@ -18,7 +18,7 @@ while condicao_nome:
     nome = input("Qual é o seu nome?\n")
 
     if validar_nome(nome):
-        user_input = input(f"Seus dados estão corretos? Nome: {nome}\nsim ou não?\n").lower().strip()
+        user_input = input(f"Essa informação está correta? Nome: {nome}\nsim ou não?\n").lower().strip()
         if confirmar(user_input):
             condicao_nome = False
         else:
@@ -38,7 +38,9 @@ while condicao_data_nascimento:
     data_nascimento = input("Digite a sua data de nascimento, no formato DD/MM/AAAA.\n")
 
     if validar_idade(data_nascimento):
-        condicao_data_nascimento = False
+        user_input = input(f"Essa informção está correta? Data de nascimento: {data_nascimento}\nsim ou não?\n")
+        if confirmar(user_input):
+            condicao_data_nascimento = False
     else:
         print("Vamos tentar novamente. \nExemplo: 01/01/2000\n")
 
