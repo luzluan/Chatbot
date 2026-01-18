@@ -1,6 +1,6 @@
 import re
 
-print("Olá!\nSou *****, e vou te auxiliar na triagem do seu atendimento. Para iniciarmos:")
+print("Olá!\n - apresentação -")
 
 def validar_nome(nome):
     if re.fullmatch(r"^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,}$", nome):
